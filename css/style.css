@@ -8,7 +8,7 @@
 /* 添加本地字体 */
 @font-face {
     font-family: 'YanZhenQin';
-    src: url('../fonts/yanzhenqin.ttf') format('truetype');
+    src: url('/datangxiyuji_3/fonts/yanzhenqin.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -95,7 +95,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('../image1.jpeg') center/cover no-repeat;
+    background: url('/datangxiyuji_3/image1.jpeg') center/cover no-repeat;
     opacity: 0.8;
 }
 
