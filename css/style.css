@@ -1,0 +1,1069 @@
+/* 基础样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 添加本地字体 */
+@font-face {
+    font-family: 'YanZhenQin';
+    src: url('fonts/yanzhenqin.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'YanZhenQin', 'Noto Serif SC', 'SimSun', '宋体', serif;
+    line-height: 1.8;
+    color: #2c2416;
+    background-color: #f8f4e9;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* 首页样式 */
+.site-header {
+    background: linear-gradient(135deg, #8b5a2b 0%, #654321 100%);
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 3000;
+}
+
+.site-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-2px);
+}
+
+/* 英雄区域样式 */
+.hero-section {
+    position: relative;
+    color: white;
+    padding: 6rem 0;
+    text-align: center;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+}
+
+/* 静态背景容器 */
+.scroll-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+}
+
+/* 静态背景图像 */
+.scroll-background .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('image1.jpeg') center/cover no-repeat;
+    opacity: 0.8;
+}
+
+/* 英雄区域内容背景 - 改为透明 */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: -1;
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    line-height: 1.8;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.cta-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #8b5a2b 0%, #654321 100%);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(139, 90, 43, 0.3);
+    border: 2px solid rgba(255,255,255,0.3);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(139, 90, 43, 0.5);
+    background: linear-gradient(135deg, #a76c3c 0%, #7a5433 100%);
+}
+
+/* 地图页面样式 */
+.map-container {
+    height: 60vh;
+    width: 100%;
+    margin: 1rem 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e8e1d1;
+    background: #f8f4e9;
+    min-height: 400px;
+    position: relative;
+    font-family: 'YanZhenQin', 'Noto Serif SC', 'SimSun', '宋体', serif;
+}
+
+/* 确保地图容器有明确的尺寸 */
+#map {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* 地图控件样式 */
+.map-controls {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+    background: rgba(255, 255, 255, 0.98);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    border: 1px solid #e8e1d1;
+    backdrop-filter: blur(15px);
+    z-index: 1000;
+    position: relative;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.control-group {
+    width: 100%;
+}
+
+.control-group h4 {
+    color: #8b5a2b;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.layer-controls {
+    display: flex;
+    gap: 0.8rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.layer-button {
+    background: linear-gradient(135deg, #8b5a2b 0%, #654321 100%);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Noto Serif SC', 'SimSun', '宋体', serif;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    min-width: 100px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 12px rgba(139, 90, 43, 0.2);
+}
+
+.layer-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(139, 90, 43, 0.4);
+    background: linear-gradient(135deg, #a76c3c 0%, #7a5433 100%);
+}
+
+.layer-button.active {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(231, 76, 60, 0.4);
+}
+
+/* 信息面板样式 */
+.info-panel {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    border: 1px solid #e8e1d1;
+    width: 320px;
+    max-height: 75vh;
+    overflow-y: auto;
+    z-index: 2000;
+    transform: translateX(350px);
+    transition: transform 0.3s ease;
+    backdrop-filter: blur(15px);
+}
+
+.info-panel.show {
+    transform: translateX(0);
+}
+
+.panel-header {
+    background: linear-gradient(135deg, #8b5a2b 0%, #654321 100%);
+    color: white;
+    padding: 1rem;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.panel-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.panel-content {
+    padding: 1rem;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.panel-content p {
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+}
+
+.panel-content strong {
+    color: #8b5a2b;
+}
+
+.detail-btn {
+    background: linear-gradient(135deg, #8b5a2b 0%, #654321 100%);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Noto Serif SC', 'SimSun', '宋体', serif;
+    font-size: 0.9rem;
+    width: 100%;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+}
+
+.detail-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* 地图标记样式增强 */
+.custom-marker {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.custom-marker:hover {
+    transform: scale(1.2);
+}
+
+/* 页脚样式 */
+.site-footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+.site-footer p {
+    margin: 0.5rem 0;
+}
+
+/* 国家详情页样式 */
+.country-detail {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.country-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 2rem 0;
+    border-bottom: 2px solid #e8e1d1;
+    background: linear-gradient(135deg, #f8f4e9 0%, #fffaf0 100%);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.country-header h1 {
+    color: #8b5a2b;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.country-header p {
+    color: #666;
+    font-size: 1.1rem;
+    margin: 0.3rem 0;
+}
+
+.content-section {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border: 1px solid #e8e1d1;
+}
+
+.content-section h3 {
+    color: #8b5a2b;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #e8e1d1;
+    padding-bottom: 0.5rem;
+}
+
+/* 图片样式 */
+.main-image {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.main-image img {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    border: 1px solid #e8e1d1;
+}
+
+.image-caption {
+    color: #666;
+    font-style: italic;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.gallery-item {
+    text-align: center;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    border: 1px solid #e8e1d1;
+}
+
+/* 文本内容样式 */
+.text-content {
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.text-content p {
+    margin-bottom: 1rem;
+    text-indent: 2em;
+}
+
+/* 简洁的原文和译文区分样式 */
+.classical-text {
+    font-family: 'YanZhenQin', 'Noto Serif SC', 'SimSun', '宋体', serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* 原文样式 - 加粗，深棕色 */
+.original-text {
+    font-weight: bold;
+    color: #5c3d1e;
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    border-left: 3px solid #8b5a2b;
+    font-size: 1.15rem;
+}
+
+/* 译文样式 - 正常，深灰色 */
+.translation-text {
+    color: #444;
+    margin-bottom: 1.5rem;
+    padding-left: 1rem;
+    border-left: 3px solid #d4c8a8;
+    font-size: 1rem;
+}
+
+/* 分隔线 */
+.original-text + .translation-text {
+    margin-top: -0.5rem;
+}
+
+.original-text + .translation-text + .original-text {
+    margin-top: 1.5rem;
+}
+
+/* 翻译对比样式 */
+.translation-comparison {
+    display: flex;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+@media (max-width: 768px) {
+    .translation-comparison {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+.original-section {
+    flex: 1;
+    background: #f8f4e9;
+    padding: 1.5rem;
+    border-radius: 6px;
+    border-left: 4px solid #8b5a2b;
+}
+
+.translation-section {
+    flex: 1;
+    background: #f0f8ff;
+    padding: 1.5rem;
+    border-radius: 6px;
+    border-left: 4px solid #3498db;
+}
+
+.original-section h4,
+.translation-section h4 {
+    color: #8b5a2b;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #e8e1d1;
+    padding-bottom: 0.5rem;
+}
+
+.translation-section h4 {
+    color: #3498db;
+}
+
+.original-text {
+    font-family: 'Noto Serif SC', 'SimSun', '宋体', serif;
+    line-height: 2;
+    font-size: 1.1rem;
+}
+
+.translation-text {
+    line-height: 1.8;
+    font-size: 1rem;
+    color: #2c3e50;
+}
+
+.original-text p,
+.translation-text p {
+    margin-bottom: 1rem;
+    text-indent: 2em;
+}
+
+/* 错误和空状态样式 */
+.error-container {
+    text-align: center;
+    padding: 3rem;
+    background: #f8f4e9;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-style: italic;
+    margin: 1rem 0;
+}
+
+.no-image-message {
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    padding: 2rem;
+    background: #f8f4e9;
+    border-radius: 6px;
+}
+
+/* 导航按钮样式 */
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0;
+    gap: 1rem;
+}
+
+.nav-button {
+    background: linear-gradient(135deg, #8b5a2b 0%, #654321 100%);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Noto Serif SC', 'SimSun', '宋体', serif;
+    font-size: 0.9rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 90, 43, 0.3);
+}
+
+.nav-button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* 动画 */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* 移动端响应式 */
+@media (max-width: 768px) {
+    .site-title {
+        font-size: 1.5rem;
+    }
+    
+    .main-nav ul {
+        gap: 1rem;
+    }
+    
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+    
+    .map-controls {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .control-button {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .info-panel {
+        width: calc(100% - 40px);
+        right: 20px;
+        left: 20px;
+    }
+    
+    .country-header h1 {
+        font-size: 2rem;
+    }
+    
+    .content-section {
+        padding: 1rem;
+        margin: 2rem 0;
+    }
+    
+    .image-gallery {
+        grid-template-columns: 1fr;
+    }
+    
+    .navigation-buttons {
+        flex-direction: column;
+    }
+    
+    .main-image img {
+        max-height: 300px;
+    }
+}
+
+/* 昭武九姓页面样式 */
+.zhaowu-detail {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.zhaowu-header {
+    text-align: center;
+    padding: 3rem 0;
+    background: linear-gradient(135deg, rgba(139, 90, 43, 0.1) 0%, rgba(101, 67, 33, 0.1) 100%);
+    border-radius: 16px;
+    margin-bottom: 3rem;
+}
+
+.zhaowu-header h1 {
+    font-size: 3rem;
+    color: #8b5a2b;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.zhaowu-header .subtitle {
+    font-size: 1.2rem;
+    color: #654321;
+    font-style: italic;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: #8b5a2b;
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(135deg, #8b5a2b 0%, #654321 100%);
+    border-radius: 2px;
+}
+
+.overview-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2.5rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e8e1d1;
+}
+
+.overview-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.overview-icon {
+    font-size: 3rem;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #8b5a2b 0%, #654321 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-shrink: 0;
+}
+
+.overview-text h3 {
+    font-size: 1.5rem;
+    color: #8b5a2b;
+    margin-bottom: 1rem;
+}
+
+.overview-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+.countries-section {
+    margin-bottom: 4rem;
+}
+
+.countries-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.country-item {
+    background: white;
+    border-radius: 12px;
+    padding: 1.8rem;
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    align-items: center;
+    gap: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e8e1d1;
+    transition: all 0.3s ease;
+}
+
+.country-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.country-number {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #8b5a2b 0%, #654321 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.country-info h4 {
+    font-size: 1.3rem;
+    color: #8b5a2b;
+    margin-bottom: 0.3rem;
+}
+
+.country-alias {
+    font-size: 0.95rem;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 0.8rem;
+}
+
+.country-desc {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+.detail-link {
+    background: linear-gradient(135deg, #8b5a2b 0%, #654321 100%);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    height: fit-content;
+}
+
+.detail-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 90, 43, 0.3);
+}
+
+.culture-section {
+    margin-bottom: 4rem;
+}
+
+.culture-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.culture-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e8e1d1;
+    transition: all 0.3s ease;
+}
+
+.culture-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.culture-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.culture-card h4 {
+    font-size: 1.2rem;
+    color: #8b5a2b;
+    margin-bottom: 1rem;
+}
+
+.culture-card p {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+.historical-section {
+    margin-bottom: 3rem;
+}
+
+.historical-card {
+    background: linear-gradient(135deg, rgba(139, 90, 43, 0.05) 0%, rgba(101, 67, 33, 0.05) 100%);
+    border-radius: 16px;
+    padding: 2.5rem;
+    border: 1px solid #e8e1d1;
+}
+
+.historical-card h3 {
+    font-size: 1.8rem;
+    color: #8b5a2b;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.historical-card p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.historical-card p:last-child {
+    margin-bottom: 0;
+}
+
+.action-buttons {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.action-btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin: 0 0.5rem;
+}
+
+.action-btn.primary {
+    background: linear-gradient(135deg, #8b5a2b 0%, #654321 100%);
+    color: white;
+}
+
+.action-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .zhaowu-header h1 {
+        font-size: 2rem;
+    }
+    
+    .overview-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .country-item {
+        grid-template-columns: 60px 1fr;
+        grid-template-rows: auto auto;
+    }
+    
+    .detail-link {
+        grid-column: 1 / -1;
+        margin-top: 1rem;
+        text-align: center;
+    }
+    
+    .culture-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Leaflet悬浮框自定义样式 */
+.leaflet-tooltip.custom-tooltip {
+    background: rgba(255, 255, 255, 0.98);
+    border: 1px solid #e8e1d1;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    padding: 12px;
+    font-family: 'Noto Serif SC', 'SimSun', '宋体', serif;
+    backdrop-filter: blur(15px);
+}
+
+.leaflet-tooltip.custom-tooltip::before {
+    border-top-color: #e8e1d1;
+}
+
+.leaflet-tooltip.custom-tooltip::after {
+    border-top-color: rgba(255, 255, 255, 0.98);
+}
+
+/* 佛教词汇高亮样式 */
+.buddhist-term {
+    color: #8b5a2b;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline dotted #8b5a2b;
+    text-underline-offset: 2px;
+    transition: all 0.2s ease;
+}
+
+.buddhist-term:hover {
+    color: #654321;
+    text-decoration: underline solid #654321;
+    background-color: rgba(139, 90, 43, 0.1);
+    border-radius: 2px;
+}
+
+/* 解释卡片样式 */
+#definition-card {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    background: rgba(255, 255, 255, 0.98);
+    border: 1px solid #e8e1d1;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(15px);
+    width: 300px;
+    max-width: calc(100vw - 40px);
+    animation: slideInRight 0.3s ease;
+}
+
+.definition-content {
+    padding: 1.5rem;
+}
+
+.definition-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e8e1d1;
+}
+
+.definition-header strong {
+    color: #8b5a2b;
+    font-size: 1.2rem;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: #8b5a2b;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+    background: rgba(139, 90, 43, 0.1);
+}
+
+.definition-body {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+}
