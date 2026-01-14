@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>国家详情 - 《大唐西域记》玄奘西行旅程</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1 class="site-title">《大唐西域记》玄奘西行旅程</h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="map.html" class="active">西行路线图</a></li>
+                    <li><a href="zhaowu.html">昭武九姓</a></li>
+                    <li><a href="religion.html">宗教文化</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="country-detail" id="countryDetail">
+                <div class="country-header">
+                    <h1 id="countryName">加载中...</h1>
+                    <p id="countryModernName"></p>
+                    <p id="countryLocation"></p>
+                </div>
+
+                <div class="country-images" id="countryImages">
+                    <!-- 图片将通过JavaScript动态加载 -->
+                </div>
+
+                <div class="content-section">
+                    <h3>国家信息</h3>
+                    <div id="countryInfo">
+                        <!-- 国家信息内容将通过JavaScript动态加载 -->
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h3>《大唐西域记》原文与翻译</h3>
+                    <div id="originalText" class="classical-text">
+                        <!-- 原文和翻译内容将通过JavaScript动态加载 -->
+                    </div>
+                </div>
+
+                <!-- 导航按钮 -->
+                <div class="navigation-buttons">
+                    <button class="nav-button" id="prevButton" onclick="navigateToAdjacentCountry(-1)">
+                        ← 上一个国家
+                    </button>
+                    <a href="map.html" class="nav-button">
+                        返回地图
+                    </a>
+                    <button class="nav-button" id="nextButton" onclick="navigateToAdjacentCountry(1)">
+                        下一个国家 →
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 《大唐西域记》玄奘西行旅程网站</p>
+            <p>基于玄奘法师《大唐西域记》整理制作</p>
+        </div>
+    </footer>
+
+    <script src="js/map-data.js"></script>
+    <script src="js/image-mapping.js"></script>
+    <script src="js/country.js"></script>
+</body>
+</html>

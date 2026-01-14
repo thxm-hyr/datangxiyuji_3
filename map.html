@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>玄奘西行路线图 - 《大唐西域记》</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        .leaflet-container {
+            font-family: 'Noto Serif SC', 'SimSun', '宋体', serif;
+        }
+        
+        .leaflet-popup-content-wrapper {
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .leaflet-popup-content {
+            margin: 15px;
+            line-height: 1.6;
+        }
+        
+        .map-info {
+            text-align: center;
+            margin-top: 1rem;
+            color: #3498db;
+            font-weight: bold;
+            background: #f0f8ff;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #3498db;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1 class="site-title">《大唐西域记》玄奘西行旅程</h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="map.html" class="active">西行路线图</a></li>
+                    <li><a href="zhaowu.html">昭武九姓</a></li>
+                    <li><a href="religion.html">宗教文化</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin: 2rem 0;">
+                <h2 style="color: #8b5a2b; margin: 0;">玄奘法师西行路线图</h2>
+                <a href="index.html" style="background: #8b5a2b; color: white; padding: 0.5rem 1rem; border-radius: 4px; text-decoration: none; font-size: 0.9rem;">返回首页</a>
+            </div>
+            
+            <div class="map-info">
+                🗺️ 交互式地图 - 支持缩放、拖拽、悬浮查看详情
+            </div>
+            
+
+            
+            <div class="map-layout">
+                <div id="map" class="map-container"></div>
+                
+                <!-- 国家信息面板 -->
+                <div id="countryInfoPanel" class="info-panel">
+                    <div class="panel-header">
+                        <h3 id="countryName">国家信息</h3>
+                        <button class="close-btn" onclick="closeInfoPanel()">&times;</button>
+                    </div>
+                    <div class="panel-content">
+                        <div id="countryDetails"></div>
+                        <button class="detail-btn" onclick="window.location.href = 'country.html?id=' + currentCountryId">查看详细资料</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 1rem; color: #666;">
+                <p>使用鼠标滚轮缩放地图，拖拽移动视角，点击标记查看详细信息</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 《大唐西域记》玄奘西行旅程网站</p>
+            <p>基于玄奘法师《大唐西域记》整理制作</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/map-data.js"></script>
+    <script src="js/map.js"></script>
+    
+    <script>
+        let mapInitialized = false;
+        
+        // 确保地图在页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('页面加载完成，开始初始化地图...');
+            
+            // 设置一次性初始化
+            if (!mapInitialized) {
+                setTimeout(function() {
+                    console.log('检查initMap函数是否存在:', typeof initMap);
+                    console.log('检查countriesData是否存在:', typeof countriesData);
+                    console.log('countriesData长度:', countriesData ? countriesData.length : '未定义');
+                    
+                    if (typeof initMap === 'function') {
+                        console.log('调用initMap函数...');
+                        initMap();
+                        mapInitialized = true;
+                        console.log('地图初始化完成');
+                    } else {
+                        console.error('initMap函数未找到，尝试使用initializeMap');
+                        if (typeof initializeMap === 'function') {
+                            initializeMap();
+                            mapInitialized = true;
+                        }
+                    }
+                }, 1000); // 增加延迟时间确保所有资源加载完成
+            }
+        });
+
+        // 添加窗口调整大小事件
+        window.addEventListener('resize', function() {
+            if (map && mapInitialized) {
+                setTimeout(function() {
+                    map.invalidateSize();
+                }, 100);
+            }
+        });
+    </script>
+</body>
+</html>

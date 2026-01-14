@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宗教文化 - 《大唐西域记》玄奘西行旅程</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1 class="site-title">《大唐西域记》玄奘西行旅程</h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="map.html">西行路线图</a></li>
+                    <li><a href="zhaowu.html">昭武九姓</a></li>
+                    <li><a href="religion.html" class="active">宗教文化</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="country-detail">
+                <div class="country-header">
+                    <h1>西域宗教文化</h1>
+                    <p>多元宗教融合的文明走廊</p>
+                </div>
+
+                <div class="content-section">
+                    <h3>宗教概览</h3>
+                    <p>西域地区作为东西方文明交流的重要通道，自古以来就是多种宗教交汇融合的地区。玄奘法师在西行途中，记录了佛教、琐罗亚斯德教、伊斯兰教、景教、摩尼教等多种宗教在这一地区的传播与发展。</p>
+                    
+                    <div class="religion-tabs">
+                        <button class="tab-button active" onclick="openTab(event, 'buddhism')">佛教</button>
+                        <button class="tab-button" onclick="openTab(event, 'zoroastrianism')">琐罗亚斯德教</button>
+                        <button class="tab-button" onclick="openTab(event, 'islam')">伊斯兰教</button>
+                        <button class="tab-button" onclick="openTab(event, 'nestorianism')">景教</button>
+                        <button class="tab-button" onclick="openTab(event, 'manichaeism')">摩尼教</button>
+                    </div>
+
+                    <div id="buddhism" class="tab-content active">
+                        <h4>佛教在西域的传播</h4>
+                        <p>佛教自公元前3世纪开始传入西域，经过几个世纪的发展，到玄奘西行时，西域已经成为佛教文化的重要中心。著名的佛教遗址包括克孜尔石窟、巴米扬大佛、撒马尔罕的佛教寺院等。</p>
+                        
+                        <div class="religion-features">
+                            <div class="feature-item">
+                                <h5>主要流派</h5>
+                                <ul>
+                                    <li>说一切有部（小乘佛教）</li>
+                                    <li>大乘佛教</li>
+                                    <li>密宗佛教</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <h5>重要中心</h5>
+                                <ul>
+                                    <li>龟兹（克孜尔石窟）</li>
+                                    <li>于阗（和田）</li>
+                                    <li>撒马尔罕</li>
+                                    <li>巴米扬</li>
+                                    <li>那烂陀寺（印度）</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <p>玄奘法师在《大唐西域记》中详细记载了西域各国的佛教寺院、僧侣人数、佛教经典等情况，为研究西域佛教史提供了宝贵的第一手资料。</p>
+                    </div>
+
+                    <div id="zoroastrianism" class="tab-content">
+                        <h4>琐罗亚斯德教（祆教）</h4>
+                        <p>琐罗亚斯德教是古代波斯的国教，随着波斯帝国的扩张传入西域。该教以拜火为主要特征，在西域地区有广泛影响。</p>
+                        
+                        <div class="religion-features">
+                            <div class="feature-item">
+                                <h5>主要特点</h5>
+                                <ul>
+                                    <li>崇拜圣火</li>
+                                    <li>善恶二元论</li>
+                                    <li>天葬习俗</li>
+                                    <li>祭祀仪式</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <h5>传播地区</h5>
+                                <ul>
+                                    <li>粟特地区</li>
+                                    <li>花剌子模</li>
+                                    <li>塔里木盆地周边</li>
+                                    <li>河西走廊</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <p>玄奘在《大唐西域记》中多次提到"天祠"，指的就是琐罗亚斯德教的祭祀场所。</p>
+                    </div>
+
+                    <div id="islam" class="tab-content">
+                        <h4>伊斯兰教</h4>
+                        <p>伊斯兰教在7世纪兴起后迅速向东方传播，到玄奘西行时已经开始影响西域部分地区。虽然玄奘本人没有直接记载伊斯兰教，但后来的历史发展表明伊斯兰教在西域逐渐取代了其他宗教。</p>
+                        
+                        <div class="religion-features">
+                            <div class="feature-item">
+                                <h5>传播特点</h5>
+                                <ul>
+                                    <li>阿拉伯帝国的军事扩张</li>
+                                    <li>商人的贸易传播</li>
+                                    <li>苏菲派的神秘主义传播</li>
+                                    <li>与当地文化的融合</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <h5>重要城市</h5>
+                                <ul>
+                                    <li>撒马尔罕</li>
+                                    <li>布哈拉</li>
+                                    <li>喀什噶尔</li>
+                                    <li>和田</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="nestorianism" class="tab-content">
+                        <h4>景教（基督教聂斯脱利派）</h4>
+                        <p>景教是基督教的一个分支，5世纪时因教义分歧从正统教会分离，后经波斯传入西域和中国。</p>
+                        
+                        <div class="religion-features">
+                            <div class="feature-item">
+                                <h5>教义特点</h5>
+                                <ul>
+                                    <li>基督二性二位论</li>
+                                    <li>强调基督的人性</li>
+                                    <li>使用叙利亚语仪式</li>
+                                    <li>适应东方文化</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <h5>历史遗迹</h5>
+                                <ul>
+                                    <li>西安景教碑</li>
+                                    <li>敦煌景教文献</li>
+                                    <li>中亚景教教堂遗址</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <p>景教在唐朝时传入中国，受到一定程度的官方认可，在长安等地建有景教寺院。</p>
+                    </div>
+
+                    <div id="manichaeism" class="tab-content">
+                        <h4>摩尼教</h4>
+                        <p>摩尼教是3世纪波斯人摩尼创立的宗教，融合了琐罗亚斯德教、佛教、基督教等教义，形成独特的二元论宗教体系。</p>
+                        
+                        <div class="religion-features">
+                            <div class="feature-item">
+                                <h5>核心教义</h5>
+                                <ul>
+                                    <li>光明与黑暗的二元斗争</li>
+                                    <li>严格的戒律生活</li>
+                                    <li>素食主义</li>
+                                    <li>复杂的宇宙观</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <h5>传播路线</h5>
+                                <ul>
+                                    <li>波斯→中亚→西域→中国</li>
+                                    <li>西传至北非、欧洲</li>
+                                    <li>东传至回鹘汗国</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <p>摩尼教在回鹘汗国时期达到鼎盛，成为国教。后随着回鹘的西迁，摩尼教在西域地区继续传播。</p>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h3>宗教融合与交流</h3>
+                    <p>西域地区的宗教发展呈现出明显的融合特征，不同宗教之间相互影响、借鉴，形成了独特的宗教文化景观。</p>
+                    
+                    <div class="fusion-examples">
+                        <div class="example-card">
+                            <h4>佛教与本地信仰的融合</h4>
+                            <p>佛教在传播过程中吸收了当地的山神、水神崇拜，形成了具有地方特色的佛教形态。</p>
+                        </div>
+                        
+                        <div class="example-card">
+                            <h4>琐罗亚斯德教元素的影响</h4>
+                            <p>拜火教的某些仪式和观念被其他宗教吸收，如佛教中的护法神形象就带有祆教色彩。</p>
+                        </div>
+                        
+                        <div class="example-card">
+                            <h4>艺术形式的相互借鉴</h4>
+                            <p>不同宗教在建筑、绘画、雕塑等艺术形式上相互影响，形成了多元的艺术风格。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h3>玄奘的宗教观察</h3>
+                    <p>玄奘法师在《大唐西域记》中不仅详细记载了佛教的发展情况，也对其他宗教有所观察和记录。他的记载为我们了解7世纪西域宗教状况提供了珍贵的历史资料。</p>
+                    
+                    <ul>
+                        <li>详细记录了各国佛教寺院的规模、僧侣人数、经典传承等情况</li>
+                        <li>描述了不同佛教部派的教义差异和修行方式</li>
+                        <li>提到了外道（非佛教）的宗教信仰和祭祀活动</li>
+                        <li>记载了宗教之间的交流与辩论</li>
+                    </ul>
+                </div>
+
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="map.html" class="cta-button">返回地图</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 《大唐西域记》玄奘西行旅程网站</p>
+            <p>基于玄奘法师《大唐西域记》整理制作</p>
+        </div>
+    </footer>
+
+    <style>
+        .religion-tabs {
+            display: flex;
+            border-bottom: 2px solid #e8e1d1;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .tab-button {
+            background: none;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            color: #666;
+        }
+        
+        .tab-button:hover {
+            color: #8b5a2b;
+        }
+        
+        .tab-button.active {
+            color: #8b5a2b;
+            border-bottom-color: #8b5a2b;
+            background: rgba(139, 90, 43, 0.1);
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 1rem 0;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .religion-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 1.5rem 0;
+        }
+        
+        .feature-item h5 {
+            color: #8b5a2b;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .feature-item ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .feature-item li {
+            padding: 0.3rem 0;
+            border-left: 3px solid #e8e1d1;
+            padding-left: 0.8rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .fusion-examples {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .example-card {
+            background: #f8f4e9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #e8e1d1;
+        }
+        
+        .example-card h4 {
+            color: #8b5a2b;
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .religion-tabs {
+                flex-direction: column;
+            }
+            
+            .tab-button {
+                text-align: left;
+                border-bottom: 1px solid #e8e1d1;
+                border-left: 3px solid transparent;
+            }
+            
+            .tab-button.active {
+                border-left-color: #8b5a2b;
+                border-bottom-color: #e8e1d1;
+            }
+            
+            .religion-features,
+            .fusion-examples {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <script>
+        function openTab(evt, tabName) {
+            // 隐藏所有标签内容
+            const tabcontents = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabcontents.length; i++) {
+                tabcontents[i].classList.remove("active");
+            }
+            
+            // 取消所有按钮的激活状态
+            const tabbuttons = document.getElementsByClassName("tab-button");
+            for (let i = 0; i < tabbuttons.length; i++) {
+                tabbuttons[i].classList.remove("active");
+            }
+            
+            // 显示当前标签内容，激活当前按钮
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+        
+        // 默认显示第一个标签
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.tab-button').click();
+        });
+    </script>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
